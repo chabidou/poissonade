@@ -1,0 +1,23 @@
+.newIncidentWrapper {
+
+}
+
+.newIncidentWrapper .header{
+    margin-bottom: 100px;
+}
+
+.newIncidentWrapper span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.newIncidentWrapper .image{
+    margin-right: 80px;
+}
+
+.newIncidentWrapper .title{
+    font-weight: bold;
+    font-size: 30px;
+    padding-left: 100px;
+    color: #ea4841;
+}

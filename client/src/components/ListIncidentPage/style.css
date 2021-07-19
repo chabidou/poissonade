@@ -1,0 +1,23 @@
+.listIncidentWrapper {
+
+}
+
+.listIncidentWrapper .header{
+    margin-bottom: 100px;
+}
+
+.listIncidentWrapper span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.listIncidentWrapper .image{
+    margin-right: 80px;
+}
+
+.listIncidentWrapper .title{
+    font-weight: bold;
+    font-size: 30px;
+    padding-left: 100px;
+    color: #32d8f6;
+}

@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Container from '@material-ui/core/Container';
 import Header from './components/Header';
 import NewIncidentPage from './components/NewIncidentPage';
+import ListIncidentPage from './components/ListIncidentPage';
 
 import './App.css';
 
@@ -19,20 +21,22 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
-        <Header />
-    
-        <p>{!data ? "Loading..." : data}</p>
+      <Container fixed>
+        <Router>
+          <Header />
       
-        <Switch>
-          <Route path="/createIncident">
-            <NewIncidentPage />
-          </Route>
-          <Route path="/listIncident">
-            <div>listIncident</div>
-          </Route>
-        </Switch>
-      </Router>
+          <p>{!data ? "Loading..." : data}</p>
+      
+          <Switch>
+            <Route path="/createIncident">
+              <NewIncidentPage />
+            </Route>
+            <Route path="/listIncident">
+              <ListIncidentPage />
+            </Route>
+          </Switch>
+        </Router>
+      </Container>
     </div>
   );
 }
