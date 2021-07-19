@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Header from './components/Header';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
@@ -18,18 +19,22 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
-      <p>{!data ? "Loading..." : data}</p>
-      <BrowserRouter>
+      <Router>
+        <Header />
+    
+        <p>{!data ? "Loading..." : data}</p>
+      
         <Switch>
-          <Route path="/pouet">
-            <div>POUET<a href="/prout"> vers prout</a></div>
+          <Route path="/createIncident">
+            <div>
+              createIncident
+            </div>
           </Route>
-          <Route path="/prout">
-            <div>PROUT<a href="/pouet"> vers pouet</a></div>
+          <Route path="/listIncident">
+            <div>listIncident</div>
           </Route>
         </Switch>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }

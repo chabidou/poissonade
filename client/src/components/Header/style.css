@@ -1,0 +1,15 @@
+.header {
+  margin-bottom: 40px;
+  size: 120px;
+}
+
+.header .nav-tabs a.nav-link.active {
+  background-color: #70ccec;
+  color: white;
+  font-weight: bold;
+}
+
+.header .nav-tabs a.nav-link {
+  color: black;
+  font-weight: bold;
+}

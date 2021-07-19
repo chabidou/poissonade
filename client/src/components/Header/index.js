@@ -1,17 +1,25 @@
 import React from "react";
-import { BrowserRouter, Link } from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
+import { useLocation } from 'react-router-dom';
 
-import './Header.css';
+import './style.css';
 
 function Header() {
+  let { pathname } = useLocation();
+  
   return (
-    <div class="header">
-      <BrowserRouter>
-        <ul>
-          <li><Link to="/pouet">POUET</Link></li>
-          <li><Link to="/prout">PROUT</Link></li>
-        </ul>
-      </BrowserRouter>
+    <div className="header">
+      <Nav
+        variant="tabs"
+        activeKey={pathname}
+      >
+        <Nav.Item>
+          <Nav.Link eventKey="/createIncident" href="/createIncident">Créer un incident</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="/listIncident" href="/listIncident">Liste des incidents</Nav.Link>
+        </Nav.Item>
+      </Nav>
     </div>
   );
 }
