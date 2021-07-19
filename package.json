@@ -1,0 +1,23 @@
+{
+  "name": "poissonnade",
+  "version": "1.0.0",
+  "description": "on vend du poisson !",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "build": "cd client && npm install && npm run build"
+  },
+  "author": "schabrol",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "react": "^17.0.2"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": []
+}
