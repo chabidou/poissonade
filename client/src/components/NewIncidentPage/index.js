@@ -2,13 +2,15 @@ import React from "react";
 
 import './style.css';
 
-function NewIncidentPage() {
+class NewIncidentPage extends React.Component {
   
-  return (
-    <div className="header">
-     New Incidenb
-    </div>
-  );
+  render() {
+    return (
+      <div className="header">
+        New Incidenb
+      </div>
+    );
+  }
 }
 
 export default NewIncidentPage;

@@ -1,25 +1,43 @@
 import React from "react";
-import Nav from 'react-bootstrap/Nav';
+import Paper from '@material-ui/core/Paper';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import { Link} from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
 import './style.css';
 
 function Header() {
   let { pathname } = useLocation();
+  const [value, setValue] = React.useState(1);
   
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <div className="header">
-      <Nav
-        variant="tabs"
-        activeKey={pathname}
-      >
-        <Nav.Item>
-          <Nav.Link eventKey="/createIncident" href="/createIncident">Créer un incident</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="/listIncident" href="/listIncident">Liste des incidents</Nav.Link>
-        </Nav.Item>
-      </Nav>
+      <Paper>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+        >
+            <Tab
+              label="Creer un incident"
+              to={'/createIncident'}
+              component={Link}
+              value={0}
+            />
+            <Tab
+              label="Liste des incidents"
+              to={'/listIncident'}
+              component={Link}
+              value={1}
+            />
+        </Tabs>
+      </Paper>
     </div>
   );
 }

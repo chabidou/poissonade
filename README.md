@@ -1,7 +1,7 @@
 # Getting Started 
 
 This project contains API + frontend part\
-github : https://github.com/chabidou/poissonade
+github : https://github.com/chabidou/poissonnade
 
 ## API
 
