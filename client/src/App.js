@@ -1,5 +1,7 @@
 import React from "react";
-import logo from './logo.svg';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Header from './components/Header';
+
 import './App.css';
 
 function App() {
@@ -16,10 +18,18 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-      </header>
+      <Header/>
+      <p>{!data ? "Loading..." : data}</p>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/pouet">
+            <div>POUET<a href="/prout"> vers prout</a></div>
+          </Route>
+          <Route path="/prout">
+            <div>PROUT<a href="/pouet"> vers pouet</a></div>
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
