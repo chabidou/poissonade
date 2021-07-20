@@ -21,3 +21,13 @@
     padding-left: 100px;
     color: #32d8f6;
 }
+
+.listIncidentWrapper table th{
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+.listIncidentWrapper table tbody td{
+    text-align: left;
+}
