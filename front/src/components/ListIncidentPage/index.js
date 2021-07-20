@@ -1,4 +1,6 @@
 import React from "react";
+import Button from '@material-ui/core/Button';
+import AddCircle from '@material-ui/icons/AddCircle';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -6,6 +8,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Link from '@material-ui/core/Link';
 
 import './style.css';
 
@@ -45,10 +48,22 @@ class ListIncidentPage extends React.Component {
     return (
       <div className="listIncidentWrapper">
         <div className="header">
-          <span class="image"><img src={window.location.origin + '/bancPoisson.png'} width={300} alt={'Liste des incidents'} /></span>
-          <span class="title">Liste des incidents</span>
+          <span className="image"><img src={window.location.origin + '/bancPoisson.png'} width={300} alt={'Liste des incidents'} /></span>
+          <span className="title">Liste des incidents</span>
         </div>
   
+        <div class="addButton">
+          <Link href="/createIncident">
+            <Button
+              variant="contained"
+              color="primary"
+              startIcon={<AddCircle />}
+            >
+              Créer un incident
+            </Button>
+          </Link>
+        </div>
+
         {!isLoaded && (
           <div>Chargement des données ....</div>
         )}
@@ -88,8 +103,7 @@ class ListIncidentPage extends React.Component {
             </Table>
           </TableContainer>
         )}
-        
-      
+
       </div>
     )
   }
