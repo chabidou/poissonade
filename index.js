@@ -1,6 +1,8 @@
-import express from "express";
-import { config } from "dotenv";
-import { createIncident } from './lib/routes/incident.js';
+import express from 'express';
+import validate from 'express-joi-validate';
+import { config } from 'dotenv';
+import fishSchemaInput from './lib/schemas/fishInput.js';
+import fishHandler from './lib/handlers/fish.js';
 
 // get env config
 config();
@@ -11,10 +13,7 @@ const PORT = process.env.PORT || 3001;
 
 
 // TODO : move routes to specific files
-// app.get('/createIncident', createIncident);
 
-app.get("/api", (req, res) => {
-    res.json({ message: "Hello from server!" });
-});
+app.get('/api/fishs', /*validate(fishSchemaInput),*/ fishHandler);
 
 app.listen(PORT);
