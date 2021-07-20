@@ -13,7 +13,6 @@ const PORT = process.env.PORT || 3001;
 
 
 // TODO : move routes to specific files
-
 app.get('/api/fishs', fishHandler);
 app.get('/api/incidents', incidentHandler);
 
