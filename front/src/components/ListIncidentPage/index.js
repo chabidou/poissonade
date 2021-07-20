@@ -52,7 +52,7 @@ class ListIncidentPage extends React.Component {
           <span className="title">Liste des incidents</span>
         </div>
   
-        <div class="addButton">
+        <div className="addButton">
           <Link href="/createIncident">
             <Button
               variant="contained"

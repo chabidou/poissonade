@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import Header from './components/Header';
 import NewIncidentPage from './components/NewIncidentPage';
@@ -13,12 +13,8 @@ function App() {
           <Header />
 
           <Switch>
-            <Route path="/createIncident">
-              <NewIncidentPage />
-            </Route>
-            <Route path="/listIncident">
-              <ListIncidentPage />
-            </Route>
+            <Route path="/createIncident" component={NewIncidentPage} />
+            <Route path="/listIncident" component={ListIncidentPage} />
           </Switch>
         </Router>
       </Container>
