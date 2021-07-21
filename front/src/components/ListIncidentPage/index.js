@@ -4,6 +4,7 @@ import AddCircle from '@material-ui/icons/AddCircle';
 import Link from '@material-ui/core/Link';
 import List from '../List';
 
+import getData from './api';
 import './style.css';
 
 // Column name for incident List
@@ -28,20 +29,12 @@ class ListIncidentPage extends React.Component {
   }
   
   componentDidMount() {
-    fetch('http://localhost:3001/api/incidents')
-      .then(res => res.json())
+    getData()
       .then(
-        (result) => {
+        (data) => {
           this.setState({
             isLoaded: true,
-            incidents: result.data
-          });
-        },
-        (error) => {
-          console.log('----- ERREUR : ', error);
-          this.setState({
-            isLoaded: true,
-            error
+            incidents: data
           });
         }
       )
@@ -49,7 +42,7 @@ class ListIncidentPage extends React.Component {
   
   render () {
     const { error, isLoaded, incidents } = this.state;
-  
+
     return (
       <div className="listIncidentWrapper">
         <div className="header">
