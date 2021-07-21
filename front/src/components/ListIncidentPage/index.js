@@ -1,16 +1,21 @@
 import React from "react";
 import Button from '@material-ui/core/Button';
 import AddCircle from '@material-ui/icons/AddCircle';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
+import List from '../List';
 
 import './style.css';
+
+// Column name for incident List
+const listIncidentTitle = [
+  'Date de l\'incident',
+  'Client',
+  'Point Relais',
+  'Type d\'incident',
+  'Cause',
+  'Résolution',
+  'Montant Remboursé'
+,];
 
 class ListIncidentPage extends React.Component {
   constructor(props) {
@@ -73,35 +78,7 @@ class ListIncidentPage extends React.Component {
         )}
         
         {incidents && (
-          // material-ui provide a sorted table
-          <TableContainer component={Paper}>
-            <Table aria-label="simple table">
-              <TableHead>
-                <TableRow>
-                  <TableCell>Date de l'incident</TableCell>
-                  <TableCell>Client</TableCell>
-                  <TableCell>Point Relais</TableCell>
-                  <TableCell>Type d'incident</TableCell>
-                  <TableCell>Cause</TableCell>
-                  <TableCell>Résolution</TableCell>
-                  <TableCell>Montant Remboursé</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {incidents.map((incidents) => (
-                  <TableRow key={incidents.email}>
-                    <TableCell>{incidents.date}</TableCell>
-                    <TableCell>{incidents.email}</TableCell>
-                    <TableCell>{incidents.relayPoint}</TableCell>
-                    <TableCell>{incidents.type}</TableCell>
-                    <TableCell>{incidents.cause}</TableCell>
-                    <TableCell>{incidents.resolution}</TableCell>
-                    <TableCell>{incidents.refund}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
+          <List titleList={listIncidentTitle} incidentList={incidents}/>
         )}
 
       </div>

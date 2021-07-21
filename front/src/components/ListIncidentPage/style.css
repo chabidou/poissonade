@@ -1,5 +1,5 @@
 .listIncidentWrapper .header{
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 .listIncidentWrapper .header span {
@@ -20,14 +20,4 @@
 
 .listIncidentWrapper .addButton {
     margin-bottom: 40px;
-}
-
-.listIncidentWrapper table th{
-    font-weight: bold;
-    font-size: 16px;
-    text-align: center;
-}
-
-.listIncidentWrapper table tbody td{
-    text-align: left;
 }
