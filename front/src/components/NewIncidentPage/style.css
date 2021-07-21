@@ -21,3 +21,15 @@
     padding-left: 100px;
     color: #ea4841;
 }
+
+.newIncidentWrapper form  .MuiTableCell-root {
+    padding: 30px 16px;
+}
+
+.newIncidentWrapper form .email {
+    padding-right: 20px;
+}
+
+.newIncidentWrapper form .emailArea .addEmail{
+    cursor: pointer;
+}
