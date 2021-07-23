@@ -19,6 +19,8 @@ import {
   DatePicker,
 } from '@material-ui/pickers';
 
+import postForm from './api';
+
 import './style.css';
 
 // TODO : move to constant file
@@ -64,18 +66,16 @@ class NewIncidentPage extends React.Component {
     this.setState({
       [name]: valueForm
     });
-    
-    console.log('---- Display State : ', this.state);
   }
   
   // Incident type change
   handleSubmit(event, value) {
-  
+    postForm(this.state);
   }
   
   render() {
     const { date }  =this.state;
-console.log('---- DATE RENDER : ', date);
+
     return (
       <div className="newIncidentWrapper">
         <div className="header">
@@ -84,7 +84,7 @@ console.log('---- DATE RENDER : ', date);
         </div>
         
           <div className="form">
-            <form onSubmit={this.handleSubmit}>
+            <form>
               <FormControl>
                 <TableContainer component={Paper}>
                   <Table>
@@ -129,42 +129,49 @@ console.log('---- DATE RENDER : ', date);
                         </TableCell>
                       </TableRow>
                       
-                      {/*<TableRow>*/}
-                        {/*<TableCell>*/}
-                          {/*<Autocomplete*/}
-                            {/*onInputChange={(event, value) => this.handleTypeChange(event, value)}*/}
-                            {/*options={incidentTypeList}*/}
-                            {/*getOptionLabel={(label) => label}*/}
-                            {/*style={{ width: 300 }}*/}
-                            {/*renderInput={(params) => <TextField {...params} label="Type d'incident" variant="outlined" />}*/}
-                            {/*name="incidentType"*/}
-                          {/*/>*/}
-                        {/*</TableCell>*/}
-                        {/*<TableCell>*/}
-                          {/*<Autocomplete*/}
-                            {/*disabled*/}
-                            {/*getOptionLabel={(label) => label}*/}
-                            {/*options={[]}*/}
-                            {/*style={{ width: 300 }}*/}
-                            {/*renderInput={(params) => <TextField {...params} label="Cause d'incident" variant="outlined" />}*/}
-                            {/*name="incidentCause"*/}
-                          {/*/>*/}
-                        {/*</TableCell>*/}
-                        {/*<TableCell>*/}
-                          {/*<Autocomplete*/}
-                            {/*disabled*/}
-                            {/*getOptionLabel={(label) => label}*/}
-                            {/*optios={[]}*/}
-                            {/*style={{ width: 300 }}*/}
-                            {/*renderInput={(params) => <TextField {...params} label="Résolution incident" variant="outlined" />}*/}
-                            {/*name="incidentResolution"*/}
-                          {/*/>*/}
-                        {/*</TableCell>*/}
-                      {/*</TableRow>*/}
+                      <TableRow>
+                        <TableCell>
+                          <Autocomplete
+                            onInputChange={(event, value) => this.handleTypeChange(event, value)}
+                            options={incidentTypeList}
+                            getOptionLabel={(label) => label}
+                            style={{ width: 300 }}
+                            renderInput={(params) => <TextField {...params} label="Type d'incident" variant="outlined" />}
+                            name="incidentType"
+                          />
+                        </TableCell>
+                        <TableCell>
+                          <Autocomplete
+                            disabled
+                            getOptionLabel={(label) => label}
+                            options={[]}
+                            style={{ width: 300 }}
+                            renderInput={(params) => <TextField {...params} label="Cause d'incident" variant="outlined" />}
+                            name="incidentCause"
+                          />
+                        </TableCell>
+                        <TableCell>
+                          <Autocomplete
+                            disabled
+                            getOptionLabel={(label) => label}
+                            optios={[]}
+                            style={{ width: 300 }}
+                            renderInput={(params) => <TextField {...params} label="Résolution incident" variant="outlined" />}
+                            name="incidentResolution"
+                          />
+                        </TableCell>
+                      </TableRow>
                       
                       <TableRow>
                         <TableCell colSpan={3}>
-                          <Button type="submit" variant="contained" color="primary">Sauvegarder</Button>
+                          <Button
+                            type="submit"
+                            variant="contained"
+                            color="primary"
+                            onClick={this.handleSubmit}
+                          >
+                            Sauvegarder
+                          </Button>
                         </TableCell>
                       </TableRow>
                       
