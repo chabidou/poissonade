@@ -22,7 +22,6 @@ class ListIncidentPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: null,
       isLoaded: false,
       items: []
     };
@@ -41,7 +40,7 @@ class ListIncidentPage extends React.Component {
   }
   
   render () {
-    const { error, isLoaded, incidents } = this.state;
+    const { isLoaded, incidents } = this.state;
 
     return (
       <div className="listIncidentWrapper">
@@ -66,7 +65,7 @@ class ListIncidentPage extends React.Component {
           <div>Chargement des données ....</div>
         )}
         
-        {error && (
+        {!incidents && (
           <div>Impossible de charger les incidents</div>
         )}
         
