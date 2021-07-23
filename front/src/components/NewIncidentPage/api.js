@@ -7,7 +7,7 @@ import axios from 'axios';
 const postForm = (data) => {
   const options = {
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
     }
   };
   
